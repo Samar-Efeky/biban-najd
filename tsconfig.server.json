@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc/server",
+    "baseUrl": ".",
+    "module": "ESNext",
+    "types": ["node"],
+    "target": "ES2020",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true
+  },
+  "files": ["src/main.server.ts"],
+  "include": ["src/**/*.d.ts", "src/**/*.ts"]
+}

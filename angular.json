@@ -18,83 +18,48 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
-            "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
             "server": "src/main.server.ts",
             "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "polyfills": ["zone.js"],
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [{"glob": "**/*", "input": "public"}],
+            "styles": ["node_modules/remixicon/fonts/remixicon.css",
+                      "node_modules/bootstrap/scss/bootstrap.scss",
+                      "src/styles.scss"],
+            "ssr": {"entry": "src/server.ts"}
           },
           "configurations": {
-            "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
-                }
-              ],
-              "outputHashing": "all"
-            },
-            "development": {
-              "optimization": false,
-              "extractLicenses": false,
-              "sourceMap": true
-            }
+            "production": {},
+            "development": {"optimization": false, "sourceMap": true}
           },
           "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {"buildTarget": "biban-najd:build:development"},
           "configurations": {
-            "production": {
-              "buildTarget": "biban-najd:build:production"
-            },
-            "development": {
-              "buildTarget": "biban-najd:build:development"
-            }
+            "production": {"buildTarget": "biban-najd:build:production"},
+            "development": {"buildTarget": "biban-najd:build:development"}
           },
           "defaultConfiguration": "development"
         },
-        "extract-i18n": {
-          "builder": "@angular/build:extract-i18n"
+        "serve-ssr": {
+          "builder": "@angular/build:dev-server",
+          "options": {"buildTarget": "biban-najd:build:development"},
+          "configurations": {
+            "production": {"buildTarget": "biban-najd:build:production"}
+          },
+          "defaultConfiguration": "development"
         },
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "src/styles.scss"
-            ]
+            "assets": [{"glob": "**/*", "input": "public"}],
+            "styles": ["src/styles.scss"]
           }
         }
       }
