@@ -1,11 +1,11 @@
-<div [class.scrolled]="scrolled"  class="navbar-section w-100">
+<div [class.scrolled]="scrolled()"  class="navbar-section w-100">
     <div class="row g-0 px-5 w-100 align-items-center pt-2 position-relative">
         <div routerLink="home" class="logo col-xxl-5 col-lg-3 col-10">
             <h4>ابلج للمقاولات العامة</h4>
             <h5>بناء المستقبل بأيدٍ محترفة</h5>
         </div>
         <div class="col-xxl-7 col-lg-9">
-            <ul class="navbar-links" [class.active]="sidebarOpen">
+            <ul class="navbar-links" [class.active]="sidebarOpen()">
                 <div class="close-sidebar py-0 px-1  m-2" (click)="toggleSidebar(false)">
                     <i class="ri-close-fill"></i>
                 </div>
