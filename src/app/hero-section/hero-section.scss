@@ -129,4 +129,56 @@
     }
 }
 }
+.services-section {
+  background: transparent;
+  transform: translateY(-40%);
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+
+  .service-card {
+    background-color:var(--PEBBLE);
+    border-radius: 1rem;
+    
+    transition: all 0.3s ease;
+    height: 100%;
+
+    &:hover {
+      transform: translateY(-8px);
+      
+    }
+
+    .icon-wrapper {
+      background-color:var(--whiteColor);
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      i {
+        font-size: 1.8rem;
+        color:var(--highTide);
+      transition: all 0.4s ease;
+
+      }
+      &:hover{
+        background-color: var(--cadetBlue);
+        i{
+            color: var(--YAM);
+        }
+      }
+    }
+
+    h5 {
+      font-size: 1.25rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+  }
+}
+
 
