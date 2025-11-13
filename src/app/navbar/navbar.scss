@@ -1,0 +1,98 @@
+.navbar-section{
+    // background-color: var(--PEBBLE);
+    font-size: 1.3rem;
+    .logo,.sidebar-logo{
+        h5{
+            font-size: 1rem;
+            opacity: 0.5;
+        }
+    }
+    background-color: transparent;
+    color: var(--PEBBLE);
+    border-bottom: 0.1px solid rgba(234, 146, 22,0.5);
+    &.scrolled {
+    background-color: var(--PEBBLE); // اللون الجديد عند scroll
+    color: var(--blackColor);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+    .navbar-links{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .sidebar-logo,.close-sidebar{
+            display: none;
+        }
+       
+        li{
+            padding-right: 2%;
+            border-right: 0.1px solid rgba(234, 146, 22,0.5);
+            cursor: pointer;
+            transition: color 0.4s ease;
+            &:hover{
+                color: var(--YAM);
+            }
+            i{
+                padding-left: 5px;
+            }
+        }
+    }
+    .icon-list{
+        display: none;
+    }
+    @media only screen and (max-width: 992px) {
+         .icon-list{
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content:left;
+        height: 100%;
+        i{
+            font-size: 1.4rem;
+        }
+    }
+        .navbar-links{
+            display: block;
+            width: 35%;
+            position: fixed;
+            top: 0;
+            left: -100%;
+            transition: left 0.4s ease-in-out;
+            height: 100vh;
+            background-color: var(--PEBBLE);
+            color: var(--blackColor);
+            padding: 4%;
+            font-size: 1.4rem;
+            text-align: center;
+            &.active {
+                left: 0; 
+            }
+            .sidebar-logo{
+                display: block;
+            }
+            li{
+                border-right: none;
+                padding: 5% 0;
+            }
+            .close-sidebar{
+                display: block;
+                position: absolute;
+               z-index: 2;
+               top: 0px;
+               right: 0px;
+               background-color: var(--highTide);
+               color: var(--PEBBLE);
+            }
+        }
+
+    }
+    @media only screen and (max-width: 730px) {
+        .navbar-links{
+            width: 50%;
+        }
+    }
+     @media only screen and (max-width: 500px) {
+        .navbar-links{
+            width: 80%;
+        }
+    }
+}
