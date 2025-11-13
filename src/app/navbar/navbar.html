@@ -1,6 +1,6 @@
 <div [class.scrolled]="scrolled"  class="navbar-section w-100">
     <div class="row g-0 px-5 w-100 align-items-center pt-2 position-relative">
-        <div class="logo col-xxl-5 col-lg-3 col-10">
+        <div routerLink="home" class="logo col-xxl-5 col-lg-3 col-10">
             <h4>ابلج للمقاولات العامة</h4>
             <h5>بناء المستقبل بأيدٍ محترفة</h5>
         </div>
@@ -9,15 +9,15 @@
                 <div class="close-sidebar py-0 px-1  m-2" (click)="toggleSidebar(false)">
                     <i class="ri-close-fill"></i>
                 </div>
-                  <div class="sidebar-logo  mb-5">
+                  <div routerLink="home" class="sidebar-logo  mb-5">
                     <h4 class="fw-bolder">ابلج للمقاولات العامة</h4>
                     <h5 class="fw-bold">بناء المستقبل بأيدٍ محترفة</h5>
                   </div>
-                <li ><i class="ri-home-8-line"></i>الرئيسية</li>
-                <li><i class="ri-edit-circle-line"></i>من نحن</li>
-                <li><i class="ri-creative-commons-nd-line"></i>مشاريعنا</li>
-                <li><i class="ri-settings-2-line"></i>خدمتنا</li>
-                <li><i class="ri-mail-line"></i>اتصل بنا</li>
+                <li routerLink="home" routerLinkActive="active-link"><i class="ri-home-8-line"></i>الرئيسية</li>
+                <li routerLink="about-us" routerLinkActive="active-link"><i class="ri-edit-circle-line"></i>من نحن</li>
+                <li routerLink="projects" routerLinkActive="active-link"><i class="ri-creative-commons-nd-line"></i>مشاريعنا</li>
+                <li routerLink="services" routerLinkActive="active-link"><i class="ri-settings-2-line"></i>خدمتنا</li>
+                <li routerLink="contact-us" routerLinkActive="active-link"><i class="ri-mail-line"></i>اتصل بنا</li>
             </ul>
         </div>
         <div class="icon-list col-lg-1 col-2 position-absolute top-0 start-0 ps-4" (click)="toggleSidebar(true)">
